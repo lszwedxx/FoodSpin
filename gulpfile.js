@@ -3,13 +3,17 @@ const util = require('gulp-util');
 
 //Dev
 const sass = require('gulp-sass')(require('sass'));
-const browsersync = require('browser-sync').create();
+const browsersync = require('browser-sync')
 
-//Prod
+
+// Prod
 const minCss = require('gulp-clean-css');
 const babel = require('gulp-babel');
-const uglify =require('gulp-uglify')
-
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
+const processhtml =require('gulp-processhtml');
+const imgmin = require('gulp-image');
+const rep = require('gulp-replace-image-src');
 //Tasks dev
 const browsersyncServe = (cb)=> {
     if(util.env.pord){
@@ -54,13 +58,32 @@ const babelTask = () => {
     .pipe(dest('./dist/js'))
 }
 
+const htmlTask = () => {
+    return src('./index.html')
+    .pipe(processhtml())
+    .pipe(rep({
+        prependSrc : './images/',
+        keepOrigin : false
+      }))
+    .pipe(htmlmin({ collapseWhitespace: true,
+    removeComments: true }))
+    .pipe(dest('./dist'));
+}
+
+const imageTask = () => {
+    return src('./src/images/*')
+    .pipe(imgmin())
+    .pipe(dest('./dist/images'))
+}
+
 // exports depending gulp command dev or prod
-    exports.default = util.env.prod?series (
-        minCssTask,
-        babelTask
-    ):series (
-        sassTask,
-        browsersyncServe,
-        watchTasks
-    )
-    
+exports.default = util.env.prod?series (
+    minCssTask,
+    babelTask,
+    htmlTask,
+    imageTask
+):series (
+    sassTask,
+    browsersyncServe,
+    watchTasks
+)
