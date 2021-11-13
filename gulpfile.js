@@ -15,31 +15,26 @@ const processhtml =require('gulp-processhtml');
 const imgmin = require('gulp-image');
 const rep = require('gulp-replace-image-src');
 //Tasks dev
-const browsersyncServe = (cb)=> {
-    if(util.env.pord){
-        cb();
-    }else{
-        browsersync.init({
-            server: {
-              baseDir: '.'
-            }    
-          });
-    }
-}
+
 const browsersyncReload = (cb) => {
     browsersync.reload();
     cb();
 }
 
 const sassTask = () =>{
-    return src('./src/scss/main.scss')
+    return src('./src/scss/**/*.scss')
     .pipe(sass())
     .pipe(dest('./src/css'))
 }
 
 const watchTasks = () => {
+    browsersync.init({
+        server: {
+          baseDir: '.'
+        }    
+      });
     watch('*.html', browsersyncReload);
-    watch('./src/scss/main.scss', series(sassTask, browsersyncReload))
+    watch('./src/scss/**/*.scss', series(sassTask, browsersyncReload))
 }
 
 //Tasks prod
@@ -84,6 +79,5 @@ exports.default = util.env.prod?series (
     imageTask
 ):series (
     sassTask,
-    browsersyncServe,
     watchTasks
 )
