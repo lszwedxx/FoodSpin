@@ -1,0 +1,25 @@
+@media (min-width: 1000px) {
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .nav {
+    width: 70%;
+    align-self: flex-end;
+  }
+  .nav__btn {
+    display: none;
+  }
+  .nav__list {
+    position: static;
+    display: flex;
+  }
+  .nav__list.show {
+    display: flex;
+  }
+  .nav__item {
+    font-size: 1.1rem;
+    padding: 0;
+    padding-right: 3em;
+  }
+}

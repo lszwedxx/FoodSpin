@@ -1,2 +1,9 @@
-@import './_reset';
-@import './_variables';
+@import './reset';
+@import './variables';
+@import './mixins.scss';
+//Components
+@import './components/container';
+@import './components/header';
+@import './components/nav';
+//Media
+@import './media/media.scss';
