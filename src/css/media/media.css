@@ -1,4 +1,35 @@
-@media (min-width: 1000px) {
+@media (min-width: 500px) and (orientation: landscape) {
+  .circle {
+    bottom: 50%;
+  }
+}
+@media (min-width: 700px) and (orientation: landscape) {
+  .nav {
+    width: 70%;
+    align-self: flex-end;
+  }
+  .nav__btn {
+    display: none;
+  }
+  .nav__list {
+    position: static;
+    display: flex;
+  }
+  .nav__list.show {
+    display: flex;
+  }
+  .nav__item {
+    font-size: 1.1rem;
+    padding: 0;
+    padding-right: 3em;
+  }
+
+  .circle {
+    right: -20%;
+    bottom: 40%;
+  }
+}
+@media (min-width: 800px) {
   .header {
     flex-wrap: nowrap;
   }
@@ -21,5 +52,26 @@
     font-size: 1.1rem;
     padding: 0;
     padding-right: 3em;
+  }
+
+  .circle {
+    right: -20%;
+    bottom: 50%;
+  }
+}
+@media (min-width: 800px) and (orientation: portrait) {
+  .circle {
+    bottom: 60%;
+  }
+}
+@media (min-width: 1000px) and (orientation: landscape) {
+  .circle {
+    right: -20%;
+    bottom: 40%;
+  }
+}
+@media (min-width: 1300px) {
+  .circle {
+    bottom: 35%;
   }
 }

@@ -1,0 +1,12 @@
+
+    .circle{
+        position:absolute;
+        bottom:75%;
+        width:100%;
+        height:100vw;
+        background:$secondary-color-1;
+        border-radius: 50%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
