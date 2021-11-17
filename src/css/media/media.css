@@ -25,13 +25,28 @@
   }
 
   .circle {
-    right: -20%;
+    left: 20%;
     bottom: 40%;
   }
+  .circle .carousel {
+    display: block;
+    width: 45%;
+    height: 45%;
+    bottom: -20%;
+    left: 27%;
+  }
+  .circle .carousel img {
+    width: 60px;
+    height: 60px;
+    border: 2px;
+  }
 }
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .header {
     flex-wrap: nowrap;
+  }
+  .header img {
+    width: 15%;
   }
 
   .nav {
@@ -55,23 +70,60 @@
   }
 
   .circle {
-    right: -20%;
-    bottom: 50%;
+    left: 20%;
+    bottom: 45%;
+  }
+  .circle .carousel {
+    display: block;
+    width: 45%;
+    height: 45%;
+    bottom: -20%;
+    left: 27%;
+  }
+  .circle .carousel img {
+    width: 65px;
+    height: 65px;
   }
 }
-@media (min-width: 800px) and (orientation: portrait) {
+@media (min-width: 768px) and (orientation: landscape) {
+  .circle .carousel {
+    width: 40%;
+    height: 40%;
+    bottom: -20%;
+    left: 30%;
+  }
+  .circle .carousel img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
   .circle {
-    bottom: 60%;
+    bottom: 55%;
   }
 }
 @media (min-width: 1000px) and (orientation: landscape) {
   .circle {
-    right: -20%;
-    bottom: 40%;
+    bottom: 45%;
+  }
+}
+@media (min-width: 1000px) {
+  .nav__item {
+    font-size: 1.3rem;
+  }
+
+  .circle .carousel img {
+    width: 75px;
+    height: 75px;
   }
 }
 @media (min-width: 1300px) {
   .circle {
     bottom: 35%;
+    left: 20%;
+  }
+  .circle .carousel img {
+    width: 90px;
+    height: 90px;
   }
 }

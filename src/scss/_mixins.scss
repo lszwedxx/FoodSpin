@@ -4,3 +4,23 @@
     background: #000;
     transition: all .3s linear;
 }
+@mixin img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top:0;
+    left:50%;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+$items: 6;
+
+@for $i from 1 through $items {
+    .carousel__item-#{$i} {
+        position: absolute;
+        transform-origin: center;
+        transform: rotate(60deg * $i);
+        width: 100%;
+        height: 100%;
+    }
+}
