@@ -14,10 +14,18 @@
         width: 185px;
         height:185px;
         border-radius: 50%;
+        background-position: center;
+        background-size: cover;
         overflow: hidden;
         img{
+            position: absolute;
             height:100%;
             object-fit:cover;
+            opacity:0;
+            transition: opacity .4s ease-out;
+        }
+        .show{
+            opacity:1;
         }
     }
     .change-btn{
@@ -64,6 +72,4 @@
         padding:1em;
         padding-top:0;
     }
-
-
 }
