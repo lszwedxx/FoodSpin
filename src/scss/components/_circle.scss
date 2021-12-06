@@ -19,6 +19,13 @@
                 @include img;
             }
         }
+        .vege{
+            border: 2px dashed $primary-color-2;
+        }
 }
+.vege{
+    background-color: $secondary-color-2;
+}
+
 
 

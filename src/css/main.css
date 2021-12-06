@@ -221,6 +221,13 @@ img {
   object-fit: cover;
   overflow: hidden;
 }
+.circle .vege {
+  border: 2px dashed #54BF29;
+}
+
+.vege {
+  background-color: #EAFFE2;
+}
 
 .main-content {
   position: relative;
@@ -278,6 +285,9 @@ img {
   color: #fff;
   width: 1rem;
 }
+.main-content .vege {
+  background: #54BF29;
+}
 .main-content__description {
   padding: 1rem;
   text-align: center;
@@ -295,6 +305,9 @@ img {
 .main-content__description .order:hover, .main-content__description .order:focus {
   transform: scale(1.2);
   font-weight: bold;
+}
+.main-content__description .vege {
+  background: #54BF29;
 }
 .main-content__title {
   padding: 1em;
