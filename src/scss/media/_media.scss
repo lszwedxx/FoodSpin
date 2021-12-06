@@ -41,6 +41,7 @@
         &__list{
             position: static;
             display: flex;
+            background: transparent;
             &.show{
                 display: flex;
             }
