@@ -1,7 +1,5 @@
 .main-content{
-    // position: absolute;
     position:relative;
-    min-height: 85vh;
     &__wrap{
         height:260px;
         position: relative;
@@ -42,9 +40,17 @@
             color: #fff;
             width: 1rem;
         }
+        &.vege{
+            background:$primary-color-2;
+        }
     }
-    .vege{
-        background:$primary-color-2;
+    &__price{
+        font-size: 1.5rem;
+        color:$primary-color-1;
+        transition: .4s;
+        &.vege{
+            color:$primary-color-2;
+        }
     }
     &__description{
         padding:1rem;
@@ -57,24 +63,24 @@
             background: $primary-color-1;
             margin-top:1em;
             box-shadow: 1px 3px 20px -7px #000;
-            transition: transform .2s ease-out;
-            &:hover,
-            &:focus{
+            transition: all .4s ease-out;
+            &:hover{
                 transform: scale(1.2);
                 font-weight: bold;
             }
-        }
-        .vege{
-            background:$primary-color-2;
+            &.vege{
+                background:$primary-color-2;
+            }
         }
     }
     &__title{
-        padding:1em;
+        padding:.2em;
         font-weight: bold;
         text-transform: uppercase;
+        letter-spacing: 0.2em;
     }
     &__food-descr{
-        line-height: 1.5;
+        line-height: 1.4;
         padding:1em;
         padding-top:0;
     }

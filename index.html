@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodSpin</title>
     <link rel="icon" href="./src/images/Fav.png" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
       <!-- build:css style.min.css -->
     <link rel="stylesheet" href="./src/css/main.css">
       <!-- /build -->
+      
 </head>
 <body>
   <main class="container">
@@ -27,28 +31,29 @@
     </header>
       <div class="circle">
         <ul class="carousel">
-          <li class="carousel__item-1"><img src="./src/images/1.jpg" alt="food"></li>
-          <li class="carousel__item-2"><img src="./src/images/2.jpg" alt="food"></li>
-          <li class="carousel__item-3"><img src="./src/images/3.jpg" alt="food"></li>
-          <li class="carousel__item-4"><img src="./src/images/4.jpg" alt="food"></li>
-          <li class="carousel__item-5"><img src="./src/images/5.jpg" alt="food"></li>
-          <li class="carousel__item-6"><img src="./src/images/6.jpg" alt="food"></li>
+          <li class="carousel__item-1"><img src="./src/images/1.jpg" alt="food-name"></li>
+          <li class="carousel__item-2"><img src="./src/images/2.jpg" alt="food-name"></li>
+          <li class="carousel__item-3"><img src="./src/images/3.jpg" alt="food-name"></li>
+          <li class="carousel__item-4"><img src="./src/images/4.jpg" alt="food-name"></li>
+          <li class="carousel__item-5"><img src="./src/images/5.jpg" alt="food-name"></li>
+          <li class="carousel__item-6"><img src="./src/images/6.jpg" alt="food-name"></li>
         </ul>
       </div>
       <section class="main-content">
         <div class="main-content__wrap">
           <div class="main-content__img" >
-            <img src="./src/images/1.jpg" data-background = '2' data-index = "1" alt="">
-            <img src="./src/images/2.jpg" data-background = '1' data-index = "2" alt="">
-            <img src="./src/images/3.jpg" data-background = '2' data-index = "3" alt="">
-            <img src="./src/images/4.jpg" data-background = '1' data-index = "4" alt="">
-            <img src="./src/images/5.jpg" data-background = '2' data-index = "5" alt="">
+            <img src="./src/images/1.jpg" data-background = '2' data-index = "1" alt="food-name">
+            <img src="./src/images/2.jpg" data-background = '1' data-index = "2" alt="food-name">
+            <img src="./src/images/3.jpg" data-background = '2' data-index = "3" alt="food-name">
+            <img src="./src/images/4.jpg" data-background = '1' data-index = "4" alt="food-name">
+            <img src="./src/images/5.jpg" data-background = '2' data-index = "5" alt="food-name">
             <img src="./src/images/6.jpg" data-background = '1' data-index = "6" class="show" alt="">
           </div>
           <button class="change-btn change-btn--left"><img src="./src/images/down-arrow.png" alt="arrow"></button>
           <button class="change-btn change-btn--right"><img src="./src/images/down-arrow.png" alt="arrow"></button>
         </div>
         <div class="main-content__description">
+            <span class="main-content__price">$32</span>
             <h1 class="main-content__title">Hello Dish</h1>
             <p class="main-content__food-descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi officiis eius odio laudantium consequatur. Temporibus laudantium delectus fugiat, natus earum quae doloremque non qui. Libero veniam dignissimos illo totam illum!</p>
             <button class="order">Order now</button>

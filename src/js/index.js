@@ -7,11 +7,19 @@ const circle = document.querySelector('.circle');
 const rightBtn = document.querySelector('.change-btn--right');
 const leftBtn = document.querySelector('.change-btn--left');
 let mainImg = document.querySelectorAll('.main-content__img > img');
-const order = document.querySelector('.order')
-const vegeArray = [carousel,circle,rightBtn,leftBtn,order]
+const order = document.querySelector('.order');
+const price = document.querySelector('.main-content__price');
+const vegeArray = [carousel,circle,rightBtn,leftBtn,order,price];
 let rotateVal = 0;
 let imgNum=6;
+const prices = [35,25,20,37,28,32];
+
 //carousel btn
+
+const priceChanger = ()=>{
+   let cost = prices.filter((item,index)=> index+1 == imgNum)
+   price.innerHTML=`$${cost[0]}`
+}
 const checkColor = (color)=>{
     if(color==2){
         vegeArray.forEach(item =>{
@@ -30,6 +38,7 @@ const showMainImg = ()=>{
     let img = [...mainImg].filter(image=>image.dataset.index==imgNum);
     img[0].classList.add('show');
     checkColor(img[0].dataset.background);
+    priceChanger();
 }
 const rotate = (direction) =>{
     if(direction=='right'){
