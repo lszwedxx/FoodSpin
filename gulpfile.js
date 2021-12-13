@@ -13,6 +13,7 @@ const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 const processhtml =require('gulp-processhtml');
 const rep = require('gulp-replace-image-src');
+const ghPages = require('gulp-gh-pages');
 //Tasks dev
 
 const browsersyncReload = (cb) => {
@@ -68,12 +69,18 @@ const copyImg = () => {
     .pipe(dest('./dist/images'))
 }
 
+const deploy = () => {
+    return src('./dist/**/*')
+    .pipe(ghPages())
+}
+
 // exports depending gulp command dev or prod
 exports.default = util.env.prod?series (
     minCssTask,
     babelTask,
     htmlTask,
-    copyImg
+    copyImg,
+    deploy
 ):series (
     sassTask,
     watchTasks
