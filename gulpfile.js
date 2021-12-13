@@ -12,7 +12,6 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 const processhtml =require('gulp-processhtml');
-const imgmin = require('gulp-image');
 const rep = require('gulp-replace-image-src');
 //Tasks dev
 
@@ -64,10 +63,8 @@ const htmlTask = () => {
     removeComments: true }))
     .pipe(dest('./dist'));
 }
-
-const imageTask = () => {
-    return src('./src/images/*')
-    .pipe(imgmin())
+const copyImg = () => {
+    return src('./src/images/**/*')
     .pipe(dest('./dist/images'))
 }
 
@@ -76,7 +73,7 @@ exports.default = util.env.prod?series (
     minCssTask,
     babelTask,
     htmlTask,
-    imageTask
+    copyImg
 ):series (
     sassTask,
     watchTasks
